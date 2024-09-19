@@ -17,6 +17,16 @@ function updateTime() {
   parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
   parisTimeElement.innerHTML = parisTime.format("h:mm:ss [<small>]A[</small>]");
   }
+  let BuenosAiresElement = document.querySelector("#buenos-aires");
+  if (BuenosAiresElement) {
+    let BuenosAiresDateElement = BuenosAiresElement.querySelector(".date");
+    let BuenosAiresTimeElement = BuenosAiresElement.querySelector(".time");
+    let BuenosAiresTime = moment().tz("America/Buenos_Aires");
+    BuenosAiresDateElement.innerHTML = BuenosAiresTime.format("MMMM Do YYYY");
+    BuenosAiresTimeElement.innerHTML = BuenosAiresTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event){
